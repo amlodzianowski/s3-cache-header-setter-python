@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aws-lambda-powertools = { extras = ["tracer", "parser", "validation"], version = "*" }
+boto3-stubs = { extras = ["essential"], version = "*" }
+
+[dev-packages]
+boto3 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+
+[requires]
+python_version = "3.9"
