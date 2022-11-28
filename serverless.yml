@@ -1,0 +1,23 @@
+---
+service: s3-cache-header-setter
+frameworkVersion: "3"
+configValidationMode: error
+deprecationNotificationMode: error
+
+provider:
+  name: aws
+  region: ${env:AWS_REGION, "us-west-2"}
+  runtime: python3.9
+
+package:
+  patterns:
+    - '!./**'
+    - header_setter/**/*
+
+functions:
+  setter:
+    handler: header_setter/handler.handler
+    layers:
+      - arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:16
+    # events:
+    #   - schedule: ${self:custom.globalSchedule}
