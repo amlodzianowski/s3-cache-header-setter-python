@@ -18,8 +18,7 @@
     "cloudfront"
   ],
   "dependencies": {
-    "serverless": "^3.25.0",
-    "serverless-python-requirements": "^6.0.0"
+    "serverless": "^3.25.0"
   },
   "devDependencies": {
     "standard-version": "^9.5.0"

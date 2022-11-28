@@ -4,11 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-aws-lambda-powertools = { extras = ["tracer", "parser", "validation"], version = "*" }
-boto3-stubs = { extras = ["essential"], version = "*" }
 
 [dev-packages]
+aws-lambda-powertools = { extras = ["tracer", "parser", "validation"], version = "*" }
 boto3 = "*"
+boto3-stubs = { extras = ["essential"], version = "*" }
+moto = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-mock = "*"
