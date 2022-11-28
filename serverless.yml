@@ -3,6 +3,7 @@ service: s3-cache-header-setter
 frameworkVersion: "3"
 configValidationMode: error
 deprecationNotificationMode: error
+useDotenv: true
 
 provider:
   name: aws
@@ -11,6 +12,18 @@ provider:
   environment:
     LOG_LEVEL: INFO
     POWERTOOLS_SERVICE_NAME: ${self:service}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:ListBucket
+            - s3:PutObject
+            - s3:PutObjectAcl
+            - s3:GetObject
+          Resource:
+            - "arn:aws:s3:::${env:S3_BUCKET_NAME}"
+            - "arn:aws:s3:::${env:S3_BUCKET_NAME}/*"
 
 package:
   patterns:
@@ -22,5 +35,10 @@ functions:
     handler: header_setter/handler.handler
     layers:
       - arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:16
-    # events:
-    #   - schedule: ${self:custom.globalSchedule}
+    events:
+      - s3:
+          bucket: ${env:S3_BUCKET_NAME}
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: ${env:S3_PATH_PREFIX}
+          existing: true

@@ -2,57 +2,30 @@
 
 This project is a serverless helper for configuring [Cache-Control headers](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationAddingHeadersInS3) on objects uploaded to S3.
 
-## Linting
-
-Linting commands to run from the devcontainer/pipeline.
-
-Pylint
-
-```bash
-pylint header_setter
-```
-
-Mypy
-
-```bash
-mypy header_setter
-```
-
-Bandit
-
-```bash
-bandit -r header_setter
-```
-
-## Unit testing
-
-```bash
-pytest --cov-report html
-```
-
 ## Deployment
 
 ### Prerequisites
 
-[Pipenv](https://pipenv.pypa.io/en/latest/) installed on the deployment machine
 [Node](https://nodejs.org/en/download/) installed on the deployment machine
 
+Create a `.env` in the root directory of this project containing the necessary settings:
+
 ```bash
-npx sls deploy -s dev
-npx sls invoke -f setter -s dev -p tests/fixtures/s3_event.json
+S3_BUCKET_NAME=s3-bucket-name
+S3_PATH_PREFIX=s3-path-prefix
+AWS_REGION=region-where-s3-bucket-lives
+
 ```
 
-## TODO
-
-Update the `serverless-python-requirements` dependency once the fix [for this](https://github.com/serverless/serverless-python-requirements/issues/716) is released
-
-## Release
-
-This project uses [Standard Version](https://www.npmjs.com/package/standard-version) for conducting releases. All commits should follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for accurately generating the CHANGELOG.md contents.
-
-To perform a release
+### Install
 
 ```bash
 npm install
-npm run release
+npx sls deploy -s dev
+```
+
+### Uninstall
+
+```bash
+npx sls remove -s dev
 ```
