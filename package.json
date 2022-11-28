@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/amlodzianowski/s3-cache-header-setter-python"
   },
+  "scripts": {
+    "release": "standard-version -a"
+  },
   "keywords": [
     "serverless",
     "s3",

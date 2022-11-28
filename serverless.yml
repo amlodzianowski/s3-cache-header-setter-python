@@ -8,6 +8,9 @@ provider:
   name: aws
   region: ${env:AWS_REGION, "us-west-2"}
   runtime: python3.9
+  environment:
+    LOG_LEVEL: INFO
+    POWERTOOLS_SERVICE_NAME: ${self:service}
 
 package:
   patterns:

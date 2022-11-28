@@ -45,3 +45,14 @@ npx sls invoke -f setter -s dev -p tests/fixtures/s3_event.json
 ## TODO
 
 Update the `serverless-python-requirements` dependency once the fix [for this](https://github.com/serverless/serverless-python-requirements/issues/716) is released
+
+## Release
+
+This project uses [Standard Version](https://www.npmjs.com/package/standard-version) for conducting releases. All commits should follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for accurately generating the CHANGELOG.md contents.
+
+To perform a release
+
+```bash
+npm install
+npm run release
+```
