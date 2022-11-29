@@ -1,3 +1,6 @@
+name: GitHub Actions Python
+run-name: ${{ github.actor }} is triggering tests and linters
+on: [push]
 jobs:
   lint:
     runs-on: ubuntu-latest
