@@ -1,5 +1,7 @@
 # s3-cache-header-setter-python
 
+![GitHub Workflow Status](https://github.com/amlodzianowski/s3-cache-header-setter-python/actions/workflows/main.yml/badge.svg)
+
 This project is a serverless helper for configuring [Cache-Control headers](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationAddingHeadersInS3) on objects uploaded to S3.
 
 ## Deployment
