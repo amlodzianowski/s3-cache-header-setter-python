@@ -22,7 +22,7 @@ jobs:
         pipenv run pylint header_setter tests
     - name: Analysing the code with mypy
       run: |
-        pipenv run mypy --install-types header_setter tests
+        pipenv run mypy --install-types --non-interactive header_setter tests
     - name: Analysing the code with bandit
       run: |
         pipenv run bandit -r header_setter
