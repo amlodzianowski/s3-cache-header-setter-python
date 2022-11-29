@@ -7,9 +7,12 @@ name = "pypi"
 
 [dev-packages]
 aws-lambda-powertools = { extras = ["tracer", "parser", "validation"], version = "*" }
+bandit = "*"
 boto3 = "*"
 boto3-stubs = { extras = ["essential"], version = "*" }
+mypy = "*"
 moto = "*"
+pylint = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-mock = "*"
