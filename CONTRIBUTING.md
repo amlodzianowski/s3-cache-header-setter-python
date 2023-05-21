@@ -28,6 +28,11 @@ Bandit
 bandit -r header_setter
 ```
 
+Megalinter
+
+```bash
+docker run -v `pwd`:/tmp/lint oxsecurity/megalinter:v6
+
 ## Testing
 
 ### Unit testing
