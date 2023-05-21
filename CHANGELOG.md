@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.0.1](https://github.com/amlodzianowski/s3-cache-header-setter-python/compare/v1.0.0...v1.0.1) (2022-11-29)
+## [1.0.1](https://github.com/amlodzianowski/s3-cache-header-setter-python/compare/v1.0.0...v1.0.1) (2022-11-29)
 
 ## [1.0.0](https://github.com/amlodzianowski/s3-cache-header-setter-python/compare/v0.0.2...v1.0.0) (2022-11-28)
 

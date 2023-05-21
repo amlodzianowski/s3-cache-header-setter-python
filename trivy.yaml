@@ -1,0 +1,6 @@
+---
+scan:
+  skip-dirs:
+    - .serverless
+    - megalinter-reports
+    - node_modules
